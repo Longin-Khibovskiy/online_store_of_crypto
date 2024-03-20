@@ -1,0 +1,214 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    body {
+        font-family: Poppins;
+    }
+
+    .bg_btn {
+        background: linear-gradient(178deg, #FD749B -13.56%, #281AC8 158.3%);
+    }
+
+    .p_18 {
+        font-family: Poppins;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+
+    .p_16 {
+        font-family: Poppins;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+    }
+
+    .p_12 {
+        font-family: Poppins;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 28px; /* 233.333% */
+    }
+
+    .h2 {
+        font-family: Poppins;
+        font-size: 28px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 65px; /* 232.143% */
+        background: var(--3, linear-gradient(178deg, #FD749B -13.56%, #281AC8 158.3%));
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .h3 {
+        font-family: Poppins;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 65px; /* 361.111% */
+        background: var(--3, linear-gradient(178deg, #FD749B -13.56%, #281AC8 158.3%));
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .text {
+        background: var(--3, linear-gradient(178deg, #FD749B -13.56%, #281AC8 158.3%));
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .hr {
+        width: 50px;
+        height: 7px;
+        background: #FD749B;
+        border-radius: 100px;
+        border: none;
+    }
+
+    .tooltip-container {
+        --background: transparent;
+        position: relative;
+        background: var(--background);
+        cursor: pointer;
+        transition: all 0.2s;
+        width: 200px;
+    }
+
+    .tooltip {
+        position: absolute;
+        top: 90%;
+        left: 50%;
+        transform: translateX(-50%) rotateX(90deg);
+        padding: 0.6em;
+        opacity: 0.6;
+        transition: all 0.5s ease;
+        background: transparent;
+        height: 0px;
+        cursor: default;
+    }
+
+    .tooltip-container:hover .tooltip {
+        opacity: 1;
+        pointer-events: auto;
+        background: none;
+        transform: translateX(-50%) rotateX(0deg);
+    }
+
+
+    input[type=radio] {
+        display: none;
+    }
+
+    .card {
+        position: absolute;
+        width: 60%;
+        height: 100%;
+        left: 0;
+        right: 0;
+        margin: auto;
+        transition: transform .4s ease;
+        cursor: pointer;
+    }
+
+    .container {
+        width: 100%;
+        max-width: 800px;
+        max-height: 600px;
+        height: 100%;
+        transform-style: preserve-3d;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cards {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        margin-bottom: 20px;
+    }
+
+    .img {
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        /*object-fit: cover;*/
+    }
+
+    #item-1:checked ~ .cards #song-3, #item-2:checked ~ .cards #song-1, #item-3:checked ~ .cards #song-2 {
+        transform: translatex(-40%) scale(.8);
+        filter: grayscale(100%) blur(2px);
+        opacity: .4;
+        z-index: 0;
+    }
+
+    #item-1:checked ~ .cards #song-2, #item-2:checked ~ .cards #song-3, #item-3:checked ~ .cards #song-1 {
+        transform: translatex(40%) scale(.8);
+        filter: grayscale(100%) blur(2px);
+        opacity: .4;
+        z-index: 0;
+    }
+
+    #item-1:checked ~ .cards #song-1, #item-2:checked ~ .cards #song-2, #item-3:checked ~ .cards #song-3 {
+        transform: translatex(0) scale(1);
+        opacity: 1;
+        z-index: 1;
+
+        .img {
+            box-shadow: 0px 0px 5px 0px rgba(81, 81, 81, 0.47);
+        }
+    }
+
+    .inputGroup {
+        font-family: 'Segoe UI', sans-serif;
+        margin: 1em 0 1em 0;
+        width: 388px;
+        position: relative;
+    }
+
+    .inputGroup input {
+        font-size: 100%;
+        padding: 0.8em;
+        outline: none;
+        border: 1px solid #FD749B;
+        background-color: transparent;
+        border-radius: 100px;
+        width: 100%;
+    }
+
+    .inputGroup label {
+        font-size: 100%;
+        position: absolute;
+        left: 0;
+        padding: 0.8em;
+        margin-left: 0.5em;
+        pointer-events: none;
+        transition: all 0.3s ease;
+        color: rgb(100, 100, 100);
+    }
+
+    .inputGroup :is(input:focus, input:valid) ~ label {
+        transform: translateY(-50%) scale(.9);
+        margin: 0em;
+        margin-left: 1.3em;
+        padding: 0.4em;
+        background-color: #ffffff;
+    }
+
+    .inputGroup :is(input:focus, input:valid) {
+        border-color: #6e1ac8;
+    }
+}
+
+@layer components {
+
+}
